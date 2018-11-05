@@ -13,21 +13,38 @@ class ContactDetailsController: UIViewController {
     
     var cpnt: Contact?
     
+    var retrievImage: ContactsAPI!
+ 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         layoutSubviews()
         setContact(contactDetail: cpnt!)
+        getImage()
+        
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        setProduct(productDetail: product)
-//    }
+     func getImage() {
+        
+        guard let url = URL(string: cpnt!.url) else {
+          return
+        }
+        retrievImage?.downloadImage(from: url, completion: { image in
+            if let img = image  as? UIImage {
+                print("Printing URL: \(img)")
+                self.userImage.image = img
+                print("Img \(img)")
+            }
+        })
+    }
+    
+
     
     func setContact(contactDetail: Contact) {
-//        nameLabel.text = contactDetail.name
+        nameLabel.text = "\(contactDetail.name)"
         userNumberLabel.text = "\(contactDetail.userNumber)"
-//        allNumbersLabel.text = String(contactDetail.allNumbers)
+//      allNumbersLabel.text = String(contactDetail.allNumbers)
 
     }
     

@@ -21,13 +21,29 @@ class HomeViewController: UIViewController {
        
        hideActivity()
         
-        getData.getContaxtsData { contact in
-            if let contact = contact {
-          print("This is the contact\(contact)")
+    }
+
+
+    
+    @objc func buttonPressed(){
+          displayActivity()
+        getData.getContaxtsData { [weak self]  (json) in
+            if let json = json {
+                   print("This is the contact\(json)")
+                self?.transition(contact: json)
             }
         }
     }
+    
 
+    func transition(contact: Contact) {
+        self.contact = contact
+            let contactDetailsController = ContactDetailsController()
+            contactDetailsController.cpnt = contact
+            self.present( contactDetailsController, animated: true)
+       
+        }
+    
     var button: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -35,26 +51,11 @@ class HomeViewController: UIViewController {
         button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         button.setBackgroundImage(#imageLiteral(resourceName: "ButtonPressed"), for: .normal)
         button.setTitleColor(.white, for: .normal)
-//        button.contentVerticalAlignment = .scaleaspectfill
-//        button.contentHorizontalAlignment = .fill
-//        button.backgroundColor = UIColor.blue
+        //        button.contentVerticalAlignment = .scaleaspectfill
+        //        button.contentHorizontalAlignment = .fill
+        //        button.backgroundColor = UIColor.blue
         return button
     }()
-    
-    @objc func buttonPressed(){
-        getData.getContaxtsData { contact in
-            if contact != nil {
-                self.transition()
-            }
-        }
-    }
-        func transition() {
-            let contactDetailsController = ContactDetailsController()
-            contactDetailsController.cpnt = contact
-            self.present( contactDetailsController, animated: true)
-        }
-    
-     
 
     var activityIndicator: UIActivityIndicatorView = {
         let ai = UIActivityIndicatorView(style: .gray)
