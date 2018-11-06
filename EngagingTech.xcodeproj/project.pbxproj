@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		10FED5F1218DD70100C9AB54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FED5F0218DD70100C9AB54 /* AppDelegate.swift */; };
 		10FED5F3218DD70100C9AB54 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FED5F2218DD70100C9AB54 /* HomeViewController.swift */; };
-		10FED5F6218DD70200C9AB54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10FED5F4218DD70200C9AB54 /* Main.storyboard */; };
 		10FED5F9218DD70200C9AB54 /* EngagingTech.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10FED5F7218DD70200C9AB54 /* EngagingTech.xcdatamodeld */; };
 		10FED5FB218DD70800C9AB54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10FED5FA218DD70800C9AB54 /* Assets.xcassets */; };
 		10FED5FE218DD70800C9AB54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10FED5FC218DD70800C9AB54 /* LaunchScreen.storyboard */; };
@@ -19,8 +18,7 @@
 		10FED629218EEAE900C9AB54 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FED628218EEAE900C9AB54 /* Contacts.swift */; };
 		10FED62B218EEB3E00C9AB54 /* Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FED62A218EEB3E00C9AB54 /* Numbers.swift */; };
 		10FED62E218F19D300C9AB54 /* ContactDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FED62D218F19D300C9AB54 /* ContactDetails.swift */; };
-		10FED631218F50CA00C9AB54 /* DownloadContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FED630218F50CA00C9AB54 /* DownloadContactsViewController.swift */; };
-		10FED633218F736B00C9AB54 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FED632218F736B00C9AB54 /* ContactsViewController.swift */; };
+		10FED6352190E5A100C9AB54 /* CorrectPaddings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FED6342190E5A100C9AB54 /* CorrectPaddings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +42,6 @@
 		10FED5ED218DD70100C9AB54 /* EngagingTech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EngagingTech.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10FED5F0218DD70100C9AB54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10FED5F2218DD70100C9AB54 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		10FED5F5218DD70200C9AB54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		10FED5F8218DD70200C9AB54 /* EngagingTech.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EngagingTech.xcdatamodel; sourceTree = "<group>"; };
 		10FED5FA218DD70800C9AB54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10FED5FD218DD70800C9AB54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,8 +56,7 @@
 		10FED628218EEAE900C9AB54 /* Contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
 		10FED62A218EEB3E00C9AB54 /* Numbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Numbers.swift; sourceTree = "<group>"; };
 		10FED62D218F19D300C9AB54 /* ContactDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetails.swift; sourceTree = "<group>"; };
-		10FED630218F50CA00C9AB54 /* DownloadContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadContactsViewController.swift; sourceTree = "<group>"; };
-		10FED632218F736B00C9AB54 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		10FED6342190E5A100C9AB54 /* CorrectPaddings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectPaddings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +110,6 @@
 				10FED5F0218DD70100C9AB54 /* AppDelegate.swift */,
 				10FED62C218EEB6F00C9AB54 /* Model */,
 				10FED621218E0D2400C9AB54 /* View */,
-				10FED5F4218DD70200C9AB54 /* Main.storyboard */,
 				10FED5FA218DD70800C9AB54 /* Assets.xcassets */,
 				10FED5FC218DD70800C9AB54 /* LaunchScreen.storyboard */,
 				10FED62F218F50AC00C9AB54 /* Controller */,
@@ -154,8 +149,9 @@
 		10FED62C218EEB6F00C9AB54 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				10FED62A218EEB3E00C9AB54 /* Numbers.swift */,
 				10FED628218EEAE900C9AB54 /* Contacts.swift */,
+				10FED62A218EEB3E00C9AB54 /* Numbers.swift */,
+				10FED6342190E5A100C9AB54 /* CorrectPaddings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -164,8 +160,6 @@
 			isa = PBXGroup;
 			children = (
 				10FED622218E0DFE00C9AB54 /* ContactsAPI.swift */,
-				10FED630218F50CA00C9AB54 /* DownloadContactsViewController.swift */,
-				10FED632218F736B00C9AB54 /* ContactsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -276,7 +270,6 @@
 			files = (
 				10FED5FE218DD70800C9AB54 /* LaunchScreen.storyboard in Resources */,
 				10FED5FB218DD70800C9AB54 /* Assets.xcassets in Resources */,
-				10FED5F6218DD70200C9AB54 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,8 +299,7 @@
 				10FED62B218EEB3E00C9AB54 /* Numbers.swift in Sources */,
 				10FED5F3218DD70100C9AB54 /* HomeViewController.swift in Sources */,
 				10FED62E218F19D300C9AB54 /* ContactDetails.swift in Sources */,
-				10FED633218F736B00C9AB54 /* ContactsViewController.swift in Sources */,
-				10FED631218F50CA00C9AB54 /* DownloadContactsViewController.swift in Sources */,
+				10FED6352190E5A100C9AB54 /* CorrectPaddings.swift in Sources */,
 				10FED5F1218DD70100C9AB54 /* AppDelegate.swift in Sources */,
 				10FED629218EEAE900C9AB54 /* Contacts.swift in Sources */,
 			);
@@ -345,14 +337,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		10FED5F4218DD70200C9AB54 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				10FED5F5218DD70200C9AB54 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		10FED5FC218DD70800C9AB54 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

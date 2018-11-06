@@ -12,7 +12,7 @@ class HomeViewController: UIViewController {
 
      var getData = ContactsAPI()
     
-    var contact: Contact?
+     var contact: Contact?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +22,6 @@ class HomeViewController: UIViewController {
        hideActivity()
         
     }
-
-
     
     @objc func buttonPressed(){
           displayActivity()
@@ -51,9 +49,7 @@ class HomeViewController: UIViewController {
         button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         button.setBackgroundImage(#imageLiteral(resourceName: "ButtonPressed"), for: .normal)
         button.setTitleColor(.white, for: .normal)
-        //        button.contentVerticalAlignment = .scaleaspectfill
-        //        button.contentHorizontalAlignment = .fill
-        //        button.backgroundColor = UIColor.blue
+
         return button
     }()
 

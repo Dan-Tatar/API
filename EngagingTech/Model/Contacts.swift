@@ -30,17 +30,13 @@ struct Contact: Codable {
 
     }
 
-
-    //func that removes the paddings and double spaces
+    //func that removes the paddings, double spaces qne new lines
     func correctPaddings(text: String) -> String {
         
-    let newText = text.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-    let noDoubleSpaces = newText.replacingOccurrences(of: "  ", with: " ")
+        let newText = text.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        let noDoubleSpaces = newText.replacingOccurrences(of: "  ", with: " ")
         let noMultiplelines = noDoubleSpaces.replacingOccurrences(of: "\n", with: "")
         return noMultiplelines
     }
 }
-
-//let newText = text.components(separatedBy: .whitespacesAndNewlines)
-//return newText.filter { !$0.isEmpty }.joined(separator: " ")
 

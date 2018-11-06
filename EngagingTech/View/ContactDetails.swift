@@ -13,39 +13,61 @@ class ContactDetailsController: UIViewController {
     
     var cpnt: Contact?
     
-    var retrievImage: ContactsAPI!
- 
+    var contactsAPI = ContactsAPI()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         layoutSubviews()
         setContact(contactDetail: cpnt!)
+        print("before")
         getImage()
-        
+        print("after")
     }
     
-     func getImage() {
+    func getImage() {
         
         guard let url = URL(string: cpnt!.url) else {
-          return
+            return
         }
-        retrievImage?.downloadImage(from: url, completion: { image in
-            if let img = image  as? UIImage {
-                print("Printing URL: \(img)")
-                self.userImage.image = img
-                print("Img \(img)")
+        
+        contactsAPI.downloadImage(from: url, completion: { (image) in
+            
+            guard let image = image else {
+                return
             }
+            self.showProfile(image: image)
+            print("Dani \(self.cpnt?.url)")
         })
     }
     
-
+    private func showProfile(image: UIImage) {
+        
+        userImage.image =  image
+    }
     
     func setContact(contactDetail: Contact) {
-        nameLabel.text = "\(contactDetail.name)"
+        nameLabel.text = cpnt?.correctPaddings(text: contactDetail.name)
+        
         userNumberLabel.text = "\(contactDetail.userNumber)"
-//      allNumbersLabel.text = String(contactDetail.allNumbers)
-
+        
+        
+        var numbers = [String]()
+        let attributedText = NSMutableAttributedString()
+        
+        let font = UIFont.systemFont(ofSize: 17)
+        let attributes = [NSAttributedString.Key.font: font]
+        for number in contactDetail.allNumbers {
+            
+            attributedText.append(NSAttributedString(string: number.type, attributes: attributes))
+            attributedText.append(NSAttributedString(string: ": ", attributes: attributes))
+            attributedText.append(NSAttributedString(string: number.refine(), attributes: attributes))
+            attributedText.append(NSAttributedString(string: "\n", attributes: attributes))
+        }
+        
+        allNumbersLabel.attributedText = attributedText
+        
     }
     
     var userImage: UIImageView = {
@@ -56,6 +78,7 @@ class ContactDetailsController: UIViewController {
         imageView.layer.borderColor = UIColor.black.cgColor
         imageView.layer.borderWidth = 2
         imageView.layer.cornerRadius = 40
+        
         return imageView
     }()
     
@@ -96,8 +119,8 @@ class ContactDetailsController: UIViewController {
         return view
     }()
     
-    var detailsView: UIView = {
-        let view = UIView()
+    var detailsView: UIScrollView = {
+        let view = UIScrollView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -106,6 +129,7 @@ class ContactDetailsController: UIViewController {
         var all = UILabel()
         all.translatesAutoresizingMaskIntoConstraints = false
         all.text = "Work: 020 444 2344"
+        all.numberOfLines = 0
         return all
     }()
     

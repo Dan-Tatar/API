@@ -11,6 +11,7 @@ import UIKit
 
 class ContactsAPI {
     
+
     typealias JsonResponseCompletion = (Contact?) -> Void
     
     func getContaxtsData(completion: @escaping JsonResponseCompletion) {
@@ -47,18 +48,15 @@ class ContactsAPI {
     
     fileprivate let downloadQueue = DispatchQueue.global(qos: .background)
     
-    func downloadImage(from url: URL, completion: @escaping (_ image: UIImage) -> Void) {
-//        downloadQueue.async(execute: { () -> Void in
+    func downloadImage(from url: URL, completion: @escaping (_ image: UIImage?) -> ()) {
 
         downloadQueue.async {
             do {
                 let data = try Data(contentsOf: url)
                 
                 if let image = UIImage(data: data) {
-                       print("IMMMG: \(image)")
                     DispatchQueue.main.async {
                     completion(image) }
-                 
                    } else { print("Cpild not decode image") }
                 } catch {
                    print("Could not load URL: \(url): \(error)")
