@@ -26,13 +26,17 @@ class HomeViewController: UIViewController {
     @objc func buttonPressed(){
           displayActivity()
         getData.getContaxtsData { [weak self]  (json) in
-            if let json = json {
-                   print("This is the contact\(json)")
+            guard let json = json else {
+             
+                let contactDetailsController = ContactDetailsController()
+
+                self?.present( contactDetailsController, animated: true)
+                return }
+                print("This is the contact\(json)")
                 self?.transition(contact: json)
-            }
+            
         }
     }
-    
 
     func transition(contact: Contact) {
         self.contact = contact

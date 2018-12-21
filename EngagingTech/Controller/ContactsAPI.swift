@@ -13,6 +13,7 @@ class ContactsAPI {
     
 
     typealias JsonResponseCompletion = (Contact?) -> Void
+    let defaults = UserDefaults.standard
     
     func getContaxtsData(completion: @escaping JsonResponseCompletion) {
         
@@ -21,8 +22,10 @@ class ContactsAPI {
         let task = URLSession.shared.dataTask(with: url)  { (data, response, error) in
             
             guard error == nil else {
+                 DispatchQueue.main.async {
                 completion(nil)
-                print("Error: \(error)")
+                }
+                print("Error for task: \(error)")
                 return
             }
             
@@ -31,11 +34,16 @@ class ContactsAPI {
             do {
                 let decoder = JSONDecoder()
                 let json = try decoder.decode( Contact.self, from: data)
+              
+                self.defaults.set(json.name, forKey: "jsonName")
+                
+                self.defaults.synchronize()
                 DispatchQueue.main.async {
                       completion(json)
                 }
               
                 print("Succesfully decoded data is: \(json)")
+                self.readUserDefaults()
                 
             } catch let err{
                 print("There is an error: \(err)")
@@ -45,6 +53,15 @@ class ContactsAPI {
         }
         task.resume()
     }
+    
+    func readUserDefaults() {
+        
+        let savedName = defaults.object(forKey: "jsonName") as? String ?? ""
+        print(" This is the saved name \(savedName)")
+
+        
+    }
+
     
     fileprivate let downloadQueue = DispatchQueue.global(qos: .background)
     

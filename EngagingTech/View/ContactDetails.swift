@@ -35,6 +35,7 @@ class ContactDetailsController: UIViewController {
         contactsAPI.downloadImage(from: url, completion: { (image) in
             
             guard let image = image else {
+//                self.userImage.image = UIImage(named:  "ned")
                 return
             }
             self.showProfile(image: image)
@@ -45,13 +46,15 @@ class ContactDetailsController: UIViewController {
     private func showProfile(image: UIImage) {
         
         userImage.image =  image
+        
     }
+    
     
     func setContact(contactDetail: Contact) {
         nameLabel.text = cpnt?.correctPaddings(text: contactDetail.name)
-        
+            nameLabel.text = "Dani"
         userNumberLabel.text = "\(contactDetail.userNumber)"
-        
+        nameLabel.text = "Dani"
         
         var numbers = [String]()
         let attributedText = NSMutableAttributedString()
@@ -66,8 +69,8 @@ class ContactDetailsController: UIViewController {
             attributedText.append(NSAttributedString(string: "\n", attributes: attributes))
         }
         
-        allNumbersLabel.attributedText = attributedText
-        
+//        allNumbersLabel.attributedText = attributedText ?? 1
+          allNumbersLabel.text = "Dani"
     }
     
     var userImage: UIImageView = {
