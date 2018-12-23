@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class ContactsAPI {
     
@@ -31,6 +32,9 @@ class ContactsAPI {
             do {
                 let decoder = JSONDecoder()
                 let json = try decoder.decode( Contact.self, from: data)
+                
+                let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+     
                 DispatchQueue.main.async {
                       completion(json)
                 }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14315.12.1" systemVersion="18A389" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Contact" representedClassName=".Contact" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userNumber" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="allNumbers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Number" inverseName="numbers" inverseEntity="Number" syncable="YES"/>
+    </entity>
+    <entity name="Number" representedClassName=".Number" syncable="YES">
+        <attribute name="number" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="numbers" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contact" inverseName="allNumbers" inverseEntity="Contact" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Contact" positionX="-305.05859375" positionY="-182.5546875" width="128" height="103"/>
+        <element name="Number" positionX="-130.30859375" positionY="15.9453125" width="128" height="88"/>
+    </elements>
+</model>
