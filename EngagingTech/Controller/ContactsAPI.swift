@@ -30,10 +30,17 @@ class ContactsAPI {
             guard let data = data else { return}
             
             do {
+                guard let codingUserInfoKeyManagedObjectContext = CodingUserInfoKey.managedObjectContext else {
+                    fatalError("Failed to retrieve managed object context")
+                }
+                let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
                 let decoder = JSONDecoder()
+                
+                decoder.userInfo[codingUserInfoKeyManagedObjectContext] = context
+                
                 let json = try decoder.decode( Contact.self, from: data)
                 
-                let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            
      
                 DispatchQueue.main.async {
                       completion(json)

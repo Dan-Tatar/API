@@ -50,7 +50,7 @@ class ContactDetailsController: UIViewController {
     func setContact(contactDetail: Contact) {
         nameLabel.text = cpnt?.correctPaddings(text: contactDetail.name)
         
-        userNumberLabel.text = "\(contactDetail.userNumber)"
+//        userNumberLabel.text = "\(contactDetail.userNumber)"
         
         
         var numbers = [String]()
@@ -58,13 +58,13 @@ class ContactDetailsController: UIViewController {
         
         let font = UIFont.systemFont(ofSize: 17)
         let attributes = [NSAttributedString.Key.font: font]
-        for number in contactDetail.allNumbers {
-            
-            attributedText.append(NSAttributedString(string: number.type, attributes: attributes))
-            attributedText.append(NSAttributedString(string: ": ", attributes: attributes))
-            attributedText.append(NSAttributedString(string: number.refine(), attributes: attributes))
-            attributedText.append(NSAttributedString(string: "\n", attributes: attributes))
-        }
+//        for number in contactDetail.allNumbers {
+//            
+//            attributedText.append(NSAttributedString(string: number.type, attributes: attributes))
+//            attributedText.append(NSAttributedString(string: ": ", attributes: attributes))
+//            attributedText.append(NSAttributedString(string: number.refine(), attributes: attributes))
+//            attributedText.append(NSAttributedString(string: "\n", attributes: attributes))
+//        }
         
         allNumbersLabel.attributedText = attributedText
         

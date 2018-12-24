@@ -17,7 +17,7 @@
 //    let userNumber: Int64
 //    let allNumbers: [Numbers]
 //    
-//    
+//
 //    private enum CodingKeys: String, CodingKey {
 //
 //        case uuid
@@ -37,4 +37,4 @@
 //        return noMultiplelines
 //    }
 //}
-//
+

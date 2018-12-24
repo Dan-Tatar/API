@@ -19,7 +19,7 @@
 		10FED609218DD70800C9AB54 /* EngagingTechTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FED608218DD70800C9AB54 /* EngagingTechTests.swift */; };
 		10FED614218DD70800C9AB54 /* EngagingTechUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FED613218DD70800C9AB54 /* EngagingTechUITests.swift */; };
 		10FED623218E0DFE00C9AB54 /* ContactsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FED622218E0DFE00C9AB54 /* ContactsAPI.swift */; };
-		10FED629218EEAE900C9AB54 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FED628218EEAE900C9AB54 /* Contacts.swift */; };
+		10FED629218EEAE900C9AB54 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FED628218EEAE900C9AB54 /* Contact.swift */; };
 		10FED62B218EEB3E00C9AB54 /* Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FED62A218EEB3E00C9AB54 /* Numbers.swift */; };
 		10FED62E218F19D300C9AB54 /* ContactDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FED62D218F19D300C9AB54 /* ContactDetails.swift */; };
 		10FED6352190E5A100C9AB54 /* CorrectPaddings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FED6342190E5A100C9AB54 /* CorrectPaddings.swift */; };
@@ -61,7 +61,7 @@
 		10FED613218DD70800C9AB54 /* EngagingTechUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngagingTechUITests.swift; sourceTree = "<group>"; };
 		10FED615218DD70800C9AB54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10FED622218E0DFE00C9AB54 /* ContactsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsAPI.swift; sourceTree = "<group>"; };
-		10FED628218EEAE900C9AB54 /* Contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
+		10FED628218EEAE900C9AB54 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		10FED62A218EEB3E00C9AB54 /* Numbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Numbers.swift; sourceTree = "<group>"; };
 		10FED62D218F19D300C9AB54 /* ContactDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetails.swift; sourceTree = "<group>"; };
 		10FED6342190E5A100C9AB54 /* CorrectPaddings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectPaddings.swift; sourceTree = "<group>"; };
@@ -95,10 +95,6 @@
 		10FED5E4218DD70100C9AB54 = {
 			isa = PBXGroup;
 			children = (
-				10FB051E21CEA069008735F7 /* Contact+CoreDataClass.swift */,
-				10FB051F21CEA069008735F7 /* Contact+CoreDataProperties.swift */,
-				10FB052021CEA069008735F7 /* Number+CoreDataClass.swift */,
-				10FB052121CEA069008735F7 /* Number+CoreDataProperties.swift */,
 				10FED5EF218DD70100C9AB54 /* EngagingTech */,
 				10FED607218DD70800C9AB54 /* EngagingTechTests */,
 				10FED612218DD70800C9AB54 /* EngagingTechUITests */,
@@ -160,10 +156,14 @@
 		10FED62C218EEB6F00C9AB54 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				10FED628218EEAE900C9AB54 /* Contacts.swift */,
+				10FED628218EEAE900C9AB54 /* Contact.swift */,
 				10FED62A218EEB3E00C9AB54 /* Numbers.swift */,
 				10FED6342190E5A100C9AB54 /* CorrectPaddings.swift */,
 				10FB051B21CE6B18008735F7 /* DataModel.xcdatamodeld */,
+				10FB051E21CEA069008735F7 /* Contact+CoreDataClass.swift */,
+				10FB051F21CEA069008735F7 /* Contact+CoreDataProperties.swift */,
+				10FB052021CEA069008735F7 /* Number+CoreDataClass.swift */,
+				10FB052121CEA069008735F7 /* Number+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -317,7 +317,7 @@
 				10FB051D21CE6B18008735F7 /* DataModel.xcdatamodeld in Sources */,
 				10FED5F1218DD70100C9AB54 /* AppDelegate.swift in Sources */,
 				10FB052321CEA069008735F7 /* Contact+CoreDataProperties.swift in Sources */,
-				10FED629218EEAE900C9AB54 /* Contacts.swift in Sources */,
+				10FED629218EEAE900C9AB54 /* Contact.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
