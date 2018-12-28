@@ -19,6 +19,6 @@ extension Number {
 
     @NSManaged public var type: String?
     @NSManaged public var number: String?
-    @NSManaged public var numbers: Contact?
+//    @NSManaged public var numbers: Contact?
 
 }

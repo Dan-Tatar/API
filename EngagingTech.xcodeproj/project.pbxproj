@@ -44,7 +44,7 @@
 
 /* Begin PBXFileReference section */
 		10FB051C21CE6B18008735F7 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
-		10FB051E21CEA069008735F7 /* Contact+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataClass.swift"; sourceTree = "<group>"; };
+		10FB051E21CEA069008735F7 /* Contact+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Contact+CoreDataClass.swift"; path = "../../Contact+CoreDataClass.swift"; sourceTree = "<group>"; };
 		10FB051F21CEA069008735F7 /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		10FB052021CEA069008735F7 /* Number+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Number+CoreDataClass.swift"; sourceTree = "<group>"; };
 		10FB052121CEA069008735F7 /* Number+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Number+CoreDataProperties.swift"; sourceTree = "<group>"; };
