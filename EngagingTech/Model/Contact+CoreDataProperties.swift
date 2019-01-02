@@ -20,7 +20,7 @@ extension Contact {
     @NSManaged public var uuid: String
     @NSManaged public var name: String
     @NSManaged public var url: String
-//    @NSManaged public var userNumber: Int64
+    @NSManaged public var userNumber: Int64
 //    @NSManaged public var allNumbers: NSSet
 
 }

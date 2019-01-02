@@ -11,7 +11,6 @@ import UIKit
 import CoreData
 
 class ContactsAPI {
-    
 
     typealias JsonResponseCompletion = (Contact?) -> Void
     
@@ -22,35 +21,42 @@ class ContactsAPI {
         let task = URLSession.shared.dataTask(with: url)  { (data, response, error) in
             
             guard error == nil else {
+                   self.fetchFromStorage()
                 completion(nil)
                 print("Error: \(error)")
+               
                 return
             }
             
             guard let data = data else { return}
             
+         
+            
             do {
                 guard let codingUserInfoKeyManagedObjectContext = CodingUserInfoKey.managedObjectContext else {
                     fatalError("Failed to retrieve managed object context")
                 }
-                let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+                guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+                let context = appDelegate.persistentContainer.viewContext
                 let decoder = JSONDecoder()
                 
                 decoder.userInfo[codingUserInfoKeyManagedObjectContext] = context
                 
                 let json = try decoder.decode( Contact.self, from: data)
-                
-            
-     
+                   //to be deleted
+                self.clearStorage()
+           
+                try context.save()
+
                 DispatchQueue.main.async {
                       completion(json)
                 }
               
                 print("Succesfully decoded data is: \(json)")
-                
+               
             } catch let err{
                 print("There is an error: \(err)")
-                
+               
             }
 
         }
@@ -75,5 +81,36 @@ class ContactsAPI {
         }
     }
 
+}
+private extension ContactsAPI {
+    
+    func fetchFromStorage(){
+    
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<Contact>(entityName: "Contact")
+
+        do {
+           let contacts = try managedContext.fetch(fetchRequest)
+       
+            print("Counting contacts. \(contacts.count)")
+            print("Loading contacts. \(contacts)")
+
+        } catch let error {
+            print("Could not fetch. \(error), \(error._userInfo)")
+            
+        }
+    }
+    func clearStorage() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Contact")
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        do {
+            try managedContext.execute(batchDeleteRequest)
+        } catch let error as NSError {
+            print(error)
+        }
+    }
 }
 

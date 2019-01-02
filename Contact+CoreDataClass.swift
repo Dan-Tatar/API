@@ -26,9 +26,8 @@ public class Contact: NSManagedObject, Codable {
         self.uuid = try container.decodeIfPresent(String.self, forKey: .uuid) ?? ""
         self.name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
         self.url = try container.decodeIfPresent(String.self, forKey: .url) ?? ""
-//     /   self.userNumber = try container.decodeIfPresent(Int64.self, forKey: .userNumber) ?? 0
-        //        self.allNumbers = try container.decodeIfPresent(String.self, forKey: .allNumbers) ?? ""
-        //        self.allNumbers = try container.decodeIfPresent(CodingKeys.self, forKey: .allNumbers)
+        self.userNumber = try container.decodeIfPresent(Int64.self, forKey: .userNumber) ?? 0
+
     }
     private enum CodingKeys: String, CodingKey {
         
@@ -46,13 +45,8 @@ public class Contact: NSManagedObject, Codable {
         try container.encode(uuid, forKey: .uuid)
         try container.encode(name, forKey: .name)
         try container.encode(url, forKey: .url)
-//        try container.encode(userNumber, forKey: .userNumber)
-        //        var allNumbers = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .allNumbers)
-        //        try allNumbers.encode(type, forKey: .type)
-        //        try allNumbers.encode(Number, forKey: .number)
-        
-        
-        //        try container.encode(allNumbers, forKey: .allNumbers)
+        try container.encode(userNumber, forKey: .userNumber)
+
     }
     //func that removes the paddings, double spaces qne new lines
     func correctPaddings(text: String) -> String {
@@ -67,3 +61,4 @@ public extension CodingUserInfoKey {
     // Helper property to retrieve the context
     static let managedObjectContext = CodingUserInfoKey(rawValue: "managedObjectContext")
 }
+

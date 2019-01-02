@@ -15,7 +15,7 @@
 //    let name: String
 //    let url: String
 //    let userNumber: Int64
-//    let allNumbers: [Numbers]
+////    let allNumbers: [Numbers]
 //    
 //
 //    private enum CodingKeys: String, CodingKey {
@@ -24,7 +24,7 @@
 //        case name
 //        case url = "profile_url"
 //        case userNumber = "user_number"
-//        case allNumbers = "telephone_numbers"
+////        case allNumbers = "telephone_numbers"
 //
 //    }
 //
